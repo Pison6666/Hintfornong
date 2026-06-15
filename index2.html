@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>คำใบ้ลับ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+<div class="bg-blobs">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
+
+<div class="wrap">
+
+  <!-- USER VIEW -->
+  <div id="userView">
+    <div class="hero">
+      <div class="tag-pill">🔍 ค้นหาคำใบ้</div>
+      <h1>ใส่เลขที่<br><span class="highlight">รับคำใบ้</span></h1>
+      <p class="sub">กรอกเลขที่ของคุณแล้วกดรับคำใบ้ได้เลย</p>
+    </div>
+
+    <div class="card">
+      <input type="text" id="uNumber" placeholder="เลขที่ของคุณ…" autofocus>
+      <button id="searchBtn" onclick="findHint()">
+        <span class="btn-text">รับคำใบ้</span>
+        <span class="btn-icon">→</span>
+      </button>
+      <div id="uResult"></div>
+    </div>
+
+    <p class="admin-link"><a href="#" onclick="showAdminLogin()">สำหรับผู้ดูแล</a></p>
+  </div>
+
+  <!-- ADMIN LOGIN -->
+  <div id="adminLogin" class="hidden">
+    <div class="hero">
+      <div class="tag-pill">🔐 Admin</div>
+      <h1>เข้าสู่<br><span class="highlight">ระบบ</span></h1>
+    </div>
+    <div class="card">
+      <input type="password" id="adminPass" placeholder="รหัสผ่าน">
+      <button onclick="checkAdminLogin()">
+        <span class="btn-text">เข้าสู่ระบบ</span>
+        <span class="btn-icon">→</span>
+      </button>
+      <div id="adminLoginError" class="error"></div>
+    </div>
+    <p class="admin-link"><a href="#" onclick="showUserView()">← กลับหน้าหลัก</a></p>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div id="adminPanel" class="hidden">
+    <div class="hero">
+      <div class="tag-pill">⚡ จัดการ</div>
+      <h1>คำใบ้<br><span class="highlight">ทั้งหมด</span></h1>
+    </div>
+
+    <div class="card form-card">
+      <div class="form-row">
+        <input type="text" id="aNumber" placeholder="เลขที่">
+      </div>
+      <textarea id="aHint" rows="3" placeholder="คำใบ้สำหรับเลขที่นี้…"></textarea>
+      <div class="form-actions">
+        <button onclick="saveHint()">บันทึก</button>
+        <button class="secondary" onclick="clearForm()">ล้าง</button>
+      </div>
+      <div id="adminMsg" class="msg"></div>
+    </div>
+
+    <div class="list-header">
+      <span>รายการทั้งหมด</span>
+      <span id="countBadge" class="badge">0</span>
+    </div>
+    <div id="hintList"></div>
+
+    <details class="settings">
+      <summary>🔑 เปลี่ยนรหัสผ่าน</summary>
+      <div class="card" style="margin-top:12px">
+        <input type="password" id="newAdminPass" placeholder="รหัสผ่านใหม่">
+        <button onclick="changeAdminPass()">เปลี่ยนรหัส</button>
+      </div>
+    </details>
+
+    <p class="admin-link"><a href="#" onclick="showUserView()">← กลับหน้าหลัก</a></p>
+  </div>
+
+</div>
+
+<script src="script2.js"></script>
+</body>
+</html>
