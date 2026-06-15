@@ -1,4 +1,4 @@
-const API_URL = 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+const API_URL = 'https://script.google.com/macros/s/AKfycbzlp91gbZFFD72VfdwcOcYGJ3kvgWYglx10AefPLyQZFtHaXOv267_47FFw_yF2bbsF0g/exec';
 const DEV_MODE = API_URL === 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
 
 const db = {
